@@ -12,8 +12,6 @@ import img2 from '../assets/img2.png';
 function ShowRecettes() {
     // State d'ajout de recette à la list
     const [recipe, setRecipe] = useState([
-        { "id":1, "title": "Recette1", "ingredients": " L'eau, riz etc..." , "etapes": "faire cuire et manger"},
-        { "id":1, "title": "Recette1", "ingredients": " L'eau, riz etc..." , "etapes": "faire cuire et manger"},
 
     ]);  //variable d'ajout de recette avec les paramères
 

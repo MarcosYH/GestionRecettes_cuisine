@@ -121,12 +121,12 @@ function ShowRecettes() {
                                 </div>
                                 <div className="col-auto">
                                     <button
-                                        className="btn btn-lg btn-success mr-20"
+                                        className="modif btn btn-success mr-3"
                                         onClick={updateTitleValue}
                                     >Modifier</button>
                                     <button
                                         onClick={cancelUpdate}
-                                        className="btn btn-lg btn-danger mr-20"
+                                        className="btn btn-danger mr-20"
                                     >Annuler</button>
                                 </div>
                             </div>
@@ -165,12 +165,12 @@ function ShowRecettes() {
                                 </div>
                                 <div className="col-auto">
                                     <button
-                                        className="btn btn-lg btn-success mr-20"
+                                        className="btn modif btn-success mr-3"
                                         onClick={updateIngredientsValue}
                                     >Modifier</button>
                                     <button
                                         onClick={cancelUpdate}
-                                        className="btn btn-lg btn-danger mr-20"
+                                        className="btn btn-danger mr-20"
                                     >Annuler</button>
                                 </div>
                             </div>
@@ -205,12 +205,12 @@ function ShowRecettes() {
                                 </div>
                                 <div className="col-auto">
                                     <button
-                                        className="btn btn-lg btn-success mr-20"
+                                        className="btn modif btn-success mr-3"
                                         onClick={updateEtapesValue}
                                     >Modifier</button>
                                     <button
                                         onClick={cancelUpdate}
-                                        className="btn btn-lg btn-danger mr-20"
+                                        className="btn btn-danger mr-20"
                                     >Annuler</button>
                                 </div>
                             </div>
@@ -258,7 +258,7 @@ function ShowRecettes() {
                                             </span>
 
                                             </h5>
-                                            <p className="card-text">INGREDIENTS: {recette.ingredients}
+                                            <p className="card-text">Ingrédients: {recette.ingredients}
                                                 <span className="icons"
                                                       onClick={ (e ) =>
                                                           setUpdateIngredients( { id: recette.id, title: recette.title, ingredients: recette.ingredients, etapes: recette.etapes  })

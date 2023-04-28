@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/GestionRecettes_cuisine/static/css/main.f5ea9d20.css",
-    "main.js": "/GestionRecettes_cuisine/static/js/main.701e8b56.js",
+    "main.css": "/GestionRecettes_cuisine/static/css/main.1197fba6.css",
+    "main.js": "/GestionRecettes_cuisine/static/js/main.5fa1245b.js",
     "static/js/787.28cb0dcd.chunk.js": "/GestionRecettes_cuisine/static/js/787.28cb0dcd.chunk.js",
     "static/media/img2.png": "/GestionRecettes_cuisine/static/media/img2.95915175f38854bc84e0.png",
     "index.html": "/GestionRecettes_cuisine/index.html",
-    "main.f5ea9d20.css.map": "/GestionRecettes_cuisine/static/css/main.f5ea9d20.css.map",
-    "main.701e8b56.js.map": "/GestionRecettes_cuisine/static/js/main.701e8b56.js.map",
+    "main.1197fba6.css.map": "/GestionRecettes_cuisine/static/css/main.1197fba6.css.map",
+    "main.5fa1245b.js.map": "/GestionRecettes_cuisine/static/js/main.5fa1245b.js.map",
     "787.28cb0dcd.chunk.js.map": "/GestionRecettes_cuisine/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f5ea9d20.css",
-    "static/js/main.701e8b56.js"
+    "static/css/main.1197fba6.css",
+    "static/js/main.5fa1245b.js"
   ]
 }

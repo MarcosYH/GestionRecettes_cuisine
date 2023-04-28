@@ -7,25 +7,27 @@ import {
 
 }
 from '@fortawesome/free-solid-svg-icons'
+//import img1 from '../assets/img1.png';
+import img2 from '../assets/img2.png';
 function ShowRecettes() {
     // State d'ajout de recette à la list
     const [recipe, setRecipe] = useState([
         { "id":1, "title": "Recette1", "ingredients": " L'eau, riz etc..." , "etapes": "faire cuire et manger"},
+        { "id":1, "title": "Recette1", "ingredients": " L'eau, riz etc..." , "etapes": "faire cuire et manger"},
 
     ]);  //variable d'ajout de recette avec les paramères
 
-    const [newRecette, setNewRecette] = useState(''); // Pour l'ajout d'une nouvelles recettes
     const [newTitle, setNewTitile] = useState(''); // Pour l'ajout du nouveau titre
     const [newIngre, setNewIngre] = useState(''); // Pour l'ajout de ingredients
     const [newEtapes, setNewEtapes] = useState(''); // Pour l'ajout d'etapes
-    const [updateRecettes, setUpdateRecettes] = useState(''); // Pour modifier une recettes
     const [updateTitle, setUpdateTitle] = useState(''); // Pour modifier le titre d'une recettes'
     const [updateIngredients, setUpdateIngredients] = useState(''); // Pour modifier les ingredients
     const [updateEtapes, setUpdateEtapes] = useState(''); // Pour modifier les etapes
+
+
 // Implémentation des fonctions
     const addRecette = (e) => {
         if(newTitle) {
-            let num = recipe.length + 1;
             let newEntry = { "id": recipe.length + 1, "title": newTitle, "ingredients": newIngre, "etapes": newEtapes };
             setRecipe([...recipe, newEntry]);
             setNewTitile('');
@@ -38,11 +40,6 @@ function ShowRecettes() {
         setRecipe(recipe.filter(recette => recette.id!== id));
     }
 
-    const updateRecette = (id, e) => {
-        e.preventDefault();
-        setRecipe(recipe.map(recette => recette.id === id? { "id": id, "title": updateTitle, "ingredients": recette.ingredients, "etapes": recette.etapes } : recette));
-        setUpdateTitle('');
-    }
     // Changer le titre
     const changeTitle = (e) => {
         let newEntry = {
@@ -104,13 +101,15 @@ function ShowRecettes() {
         setUpdateEtapes('');
     }
     return (
-        <div className="container">
+        <div className="container-fluid">
             <div className="row">
                 <div className="col-md-12 text-xl-center ">
                     <br/><br/>
                 <h1> WELCOME TO COOK 👨🏽‍🍳 </h1>
                     <br/><br/>
-
+                    <br/>
+                    <img src={img2} alt="image1" className="img-fluid float-start Img"/>
+                    <h2 className=""> Recette Info</h2>
                     { updateTitle && updateTitle ? (
 
                         <>
@@ -119,9 +118,8 @@ function ShowRecettes() {
                                     <input
                                         value={updateTitle && updateTitle.title}
                                         onChange={ (e) => changeTitle(e) }
-                                        className="form-control form-control-lg"
+                                        className="form-control form-control-lg input1"
                                     />
-
                                 </div>
                                 <div className="col-auto">
                                     <button
@@ -137,15 +135,14 @@ function ShowRecettes() {
                             <br />
                         </>
 
-
                     ) : (
                         <>
-                            {/*input addTask*/}
+                            {/*input addTitle*/}
                             <div className="row">
                                 <div className="col">
                                     <input
                                         placeholder="Entrez le titre de votre recette"
-                                        className="form-control form-control-lg"
+                                        className="form-control form-control-lg input1"
                                         value={newTitle}
                                         onChange={ (e) =>setNewTitile(e.target.value) } // Pour prendre la valeur du input
                                     />
@@ -164,7 +161,7 @@ function ShowRecettes() {
                                     <input
                                         value={updateIngredients && updateIngredients.ingredients}
                                         onChange={ (e) => changeIngredient(e) }
-                                        className="form-control form-control-lg"
+                                        className="form-control form-control-lg input2"
                                     />
 
                                 </div>
@@ -186,7 +183,7 @@ function ShowRecettes() {
                         <div className="col">
                             <input
                                 placeholder="Entrez les ingrédients..."
-                                className="form-control form-control-lg"
+                                className="form-control form-control-lg input2"
                                 value={newIngre}
                                 onChange={ (e) =>setNewIngre(e.target.value) } // Pour prendre la valeur du input de Ingredient
                             />
@@ -204,7 +201,7 @@ function ShowRecettes() {
 
                                         value={updateEtapes && updateEtapes.etapes}
                                         onChange={ (e) => changeEtapesValue(e) }
-                                        className="form-control form-control-lg"
+                                        className="form-control form-control-lg input3"
                                     />
 
                                 </div>
@@ -225,8 +222,8 @@ function ShowRecettes() {
                         <>
                         <div className="col">
                             <input
-                                placeholder="Entrez les etape de préparation"
-                                className="form-control form-control-lg"
+                                placeholder="Entrez les étapes de préparation"
+                                className="form-control form-control-lg input3"
                                 value={newEtapes}
                                 onChange={ (e) =>setNewEtapes(e.target.value) } // Pour prendre la valeur du input de Etape
                             />
@@ -234,25 +231,25 @@ function ShowRecettes() {
                             <br />
                         </>
                     )}
-                    <div className="col-auto">
+                    <div className=" col-auto ">
                         <button
-                            className="btn btn-lg btn-primary"
+                            className="btn btn-lg btn-primary "
                             onClick={addRecette}
                         >
                             Ajouter
                         </button>
                     </div>
                     <br />
-
-                    { recipe && recipe.length? '' : 'Aucune recette pour l\'instant' }
+                    <h2 className="mt-3 mb-5"> Liste de vos recettes de cuisine </h2>
+                    { recipe && recipe.length? '' : 'Aucune recette pour l\'instant 😕' }
                         { recipe && recipe
                             .sort((a, b) => a.id > b.id ? 1 : -1)
                             .map((recette, index ) => {
                                 return(
-                                    <div key={recette.id} className="card recettebg col ">
-                                        <div className="card-body ">
+                                    <div key={recette.id} className="container card recettebg col listrecettes mb-5">
+                                        <div className="card-body">
                                             <span className="Number ">{index +1}</span>
-                                            <h5 className="card-title">Titre: {recette.title}
+                                            <h5 className="card-title mt-3">Titre: {recette.title}
                                                 <span className="icons"
                                                     onClick={ (e ) =>
                                                         setUpdateTitle( { id: recette.id, title: recette.title, ingredients: recette.ingredients, etapes: recette.etapes  })
@@ -284,7 +281,7 @@ function ShowRecettes() {
                                             </span>
                                             </p>
                                         </div>
-                                        <div className="icons">
+                                        <div className="delete">
 
                                             <br/><br/>
                                             <span  onClick={ () => deleteRecette(recette.id) } title="Supprimer">
